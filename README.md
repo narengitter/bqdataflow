@@ -4,6 +4,12 @@
 
 ./gsutil ls -Lb gs://gcbucket-wordcount
 
+
+#Run locally to test
+
+python localpipeline.py --input kinglear.txt --output kinglear_copy.txt
+
+
 #Command for runner
 
 python localpipeline.py --input gs://gcbucket-wordcount/input.txt --runner=DataflowRunner --project=mydataflowtest --job_name=wordcount --temp_location=gs://gcbucket-wordcount/temp --region=us-west1
