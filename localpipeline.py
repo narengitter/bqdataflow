@@ -11,10 +11,7 @@ from apache_beam.options.pipeline_options import PipelineOptions
 from apache_beam.options.pipeline_options import SetupOptions
 
 class CountWords(beam.PTransform):
-  """A transform to count the occurrences of each word.
-  A PTransform that converts a PCollection containing lines of text into a
-  PCollection of (word, count) tuples.
-  """
+ 
   def expand(self, pcoll):
     def count_ones(word_ones):
       (word, ones) = word_ones
@@ -57,3 +54,5 @@ def run(argv=None, save_main_session=True):  #main function
 if __name__ == '__main__':  
   logging.getLogger().setLevel(logging.INFO)
   run()
+
+#adapted from - mrinaldi2 
